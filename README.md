@@ -39,7 +39,7 @@ rubocop -A
 
 ## Authors
 
-👤 **aku** 
+👤 **AZEEM** 
 - GitHub: [@aakbarkhan](https://github.com/zemola/)
 - LinkedIn: [[LinkedIn]](https://www.linkedin.com/in/olatunjiazeem/)
 - Twitter: [[Twitter]](https://https://twitter.com/zemolat/)
