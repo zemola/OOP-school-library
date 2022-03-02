@@ -9,7 +9,3 @@ class Corrector
     end
   end
 end
-
-def validate_name
-  @name = @corrector.correct_name(name)
-end
