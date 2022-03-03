@@ -2,10 +2,6 @@ class Corrector
   attr_accessor :name
 
   def correct_name(name)
-    if name.length >= 10
-      name.capitalize[0..9]
-    else
-      name.capitalize
-    end
+    name.length >= 10 ? name[0..9].capitalize : name.capitalize
   end
 end
