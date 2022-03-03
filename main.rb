@@ -12,3 +12,16 @@ class App
     @rentals = []
   
 end
+
+def start
+  puts
+  puts '              ****************My School Library****************              '
+  puts '                      ==================================              '
+  puts '                         Welcome to School Library!'
+  loop do
+    menu
+    option = get.chomp
+    break if option == '7'
+  end
+end
+
