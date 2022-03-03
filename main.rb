@@ -73,4 +73,51 @@ def list_all_people
   sleep 0.5
 end
 
+def create_person
+  print 'Would you like to create a student(1) or a teacher(2) [please input a number]: '
+  option = get.chomp
+
+  case option
+  when '1'
+    create_student
+  when '2'
+    create_teacher
+  else
+    puts 'Invalid input. please input 1 or 2'
+  end
+end
+
+def create_student
+  print 'Age: '
+  age = gets.chomp.to_i
+
+  print 'Name: '
+  name = gets.chomp
+
+  print 'Has parent permission? [Y/N]: '
+  parent_permission = gets.chomp.downcase
+
+  student = Student.new(@class, age, name, parent_permission)
+  @people << student
+
+  puts 'Student created successfully'
+  sleep 0.5
+end
+
+def create_teacher
+  print 'Age: '
+  age = gets.chomp.to_i
+
+  print 'Name: '
+  name = gets.chomp
+
+  print 'Specialization: '
+  specialization = gets.chomp
+
+  teacher = Teacher.new(age, name, specialization)
+  @people << teacher
+
+  puts 'Teacher created successfully'
+  sleep 0.5
+end
 
