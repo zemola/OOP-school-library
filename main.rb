@@ -59,3 +59,18 @@ def option_output (option)
     puts 'Please enter a number between 1 and 7.'
   end
 end
+
+def list_all_books
+  puts 'No books in the database! please add a book.' if @books.empty?
+    @books.each {|book| puts "Title : #{book.title}, Author: #{book.author}"}  
+    sleep 0.5
+  
+end
+
+def list_all_people
+  puts 'No people in the database! Please add a person.' if @people.empty?
+  @people.map { |person| puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}" }
+  sleep 0.5
+end
+
+
