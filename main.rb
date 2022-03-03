@@ -1,9 +1,9 @@
-require './person'
-require './student'
-require './book'
-require './classroom'
-require './teacher'
-require './rental'
+require_relative 'person'
+require_relative 'student'
+require_relative 'book'
+require_relative 'classroom'
+require_relative 'teacher'
+require_relative 'rental'
 
 class App
   def initialize
@@ -19,7 +19,7 @@ class App
     puts '                         Welcome to School Library!'
     loop do
       menu
-      option = get.chomp
+      option = gets.chomp
       break if option == '7'
 
       option_output option
@@ -73,7 +73,7 @@ class App
 
   def create_person
     print 'Would you like to create a student(1) or a teacher(2) [please input a number]: '
-    option = get.chomp
+    option = gets.chomp
 
     case option
     when '1'
@@ -121,7 +121,7 @@ class App
 
   def create_book
     print 'Title: '
-    title = get.chomp
+    title = gets.chomp
 
     print 'Author: '
     author = gets.chomp
@@ -133,3 +133,44 @@ class App
     sleep 0.5
   end
 end
+
+def create_rental
+  puts 'Select a book from the following list by number'
+  @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}" }
+
+  book_id = gets.chomp.to_i
+
+  puts 'Select a person from the following list by number (not id)'
+  @people.each_with_index do |person, index|
+    puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+  end
+
+  person_id = gets.chomp.to_i
+
+  print 'Date: '
+  date = gets.chomp.to_s
+
+  rental = Rental.new(date, @books[book_id], @people[person_id])
+  @rentals << rental
+
+  puts 'Rental created successfully'
+  sleep 0.5
+end
+
+def list_rentals_by_person_id
+  print 'ID of person: '
+  id = gets.chomp.to_i
+
+  puts 'Rentals:'
+  @rentals.each do |rental|
+    puts "Date: #{rental.date}, Book '#{rental.book.title}' by #{rental.book.author}" if rental.person.id == id
+  end
+  sleep 0.5
+end
+
+def main
+  app = App.new
+  app.start
+end
+
+main
