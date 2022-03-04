@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require_relative 'person'
 require_relative 'student'
 require_relative 'book'
