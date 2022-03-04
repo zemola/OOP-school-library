@@ -93,10 +93,10 @@ class App
     print 'Name: '
     name = gets.chomp
 
-    print 'Has parent permission? [Y/N]: '
-    parent_permission = gets.chomp.downcase
+    print. 'Has parent permission? [Y/N]: '
+    _parent_permission = gets.chomp.downcase
 
-    student = Student.new(@class, age, name, parent_permission)
+    student = Student.new(@class, age_std, name, parent_permission)
     @people << student
 
     puts 'Student created successfully'
