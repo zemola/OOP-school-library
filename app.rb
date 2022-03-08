@@ -99,7 +99,7 @@ class App
     author = gets.chomp
 
     book = Book.new(title, author)
-  
+
     @books << book
 
     puts 'Book added successfully'
