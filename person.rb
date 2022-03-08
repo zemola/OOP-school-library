@@ -3,7 +3,7 @@ require './rental'
 
 class Person
   attr_reader :id
-  attr_accessor :name, :age, :rentals
+  attr_accessor :name, :age, :rental, :parent_permission
 
   def initialize(age = 22, name = 'John Doe', parent_permission = 1)
     @id = Random.rand(1..2000)
