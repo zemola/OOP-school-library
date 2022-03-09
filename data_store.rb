@@ -24,6 +24,7 @@ module DataStore
       []
     end
   end
+
   def load_books
     file = 'books.json'
     if File.exist? file
@@ -87,4 +88,3 @@ module DataStore
     open('books.json', 'w') { |f| f << JSON.generate(data) }
   end
 end
-
