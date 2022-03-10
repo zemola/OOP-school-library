@@ -1,8 +1,8 @@
 require_relative 'corrector'
 
 class Person
-  attr_accessor :name, :age, :parent_permission, :rentals
-  attr_reader :id
+  attr_accessor :name, :age, :id, :parent_permission, :rentals
+  attr_reader 
 
   def initialize(id:, age:, name: 'Unknown', parent_permission: true)
     @id = id
@@ -30,5 +30,9 @@ class Person
 
   def of_age?
     @age >= 18
+  end
+
+  def to_s
+    "Name: #{@name}, ID: #{@id}, Age: #{@age} "
   end
 end
