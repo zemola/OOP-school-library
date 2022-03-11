@@ -58,7 +58,6 @@
 #   end
 # end
 
-
 require_relative '../person'
 
 describe 'Person' do
